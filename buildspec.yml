@@ -15,8 +15,6 @@ phases:
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
-      - kubectl create -f manifests/goof-deployment.yaml
-      - kubectl create -f manifests/goof-service.yaml
   post_build:
     commands:
       - echo Build completed on `date`
